@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <link href='http://serve.fontsproject.com/css?family=Alef:400' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <app-topper [page]="page" (pageChange)="page=$event"></app-topper>
+    <div class="wrapper">    
+      <div class="right-sidebar">
+        <div class="thing-description">
+          <h3 id="thing-type">{{ descriptionHeadline }}</h3>
+          <br>
+          <h4 id="thing-description" dir="rtl"></h4>
+        </div>      
+        <button id="something-else-button" (click)="generateDescription()">רוצה על משהו אחר</button>  
+        <br>
+        <input type="text" [(ngModel)]="titleInputCheck" #titleInput placeholder="כותרת" 
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'כותרת'" (click)="hideErrorMessage()">
+        <br>
+        <input type="text" [(ngModel)]="writerInputCheck" #writerInput placeholder="שם" onfocus="this.placeholder = ''" 
+        onblur="this.placeholder = 'שם'" (click)="hideErrorMessage()">
+        </div>
+      <div class="main-div">
+        <textarea [(ngModel)]="contentInputCheck" #contentInput placeholder="" autofocus (click)="hideErrorMessage()"></textarea>
+        <div class="below-textarea">
+          <div class="error-messages">
+            <p id="error-message"></p>
+          </div>
+          <div class="create-button">
+            <button (click)="getNewThing(getDescription(), contentInput.value, titleInput.value, 
+            writerInput.value)">יצירה</button>  
+          </div>
+        </div>
+      </div>
+      <div class="left-sidebar">
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>

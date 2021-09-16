@@ -1,0 +1,43 @@
+// order: top, right, bottom, left
+
+// SIDEBARS AND THEIR ELEMENTS
+
+.right-sidebar, .left-sidebar {
+  margin-top: 40px;
+  text-align: right;    
+}
+ 
+.new-search {
+  display: inline-block;
+}
+
+.search-button {
+  text-align: right;
+  max-width: 200px;
+  min-width: 200px;
+  padding: 10px 10px;
+  font-size: 18px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  font: lighter;
+}
+
+input {
+  min-width: 204px;
+  max-width: 204px;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// MAIN-DIV AND ITS ELEMENTS
+
+.thing-box {
+    cursor: pointer;
+}
+  
+.thing-box:hover {
+    box-shadow: 0 0 11px  rgba(33,33,33,.2); 
+}

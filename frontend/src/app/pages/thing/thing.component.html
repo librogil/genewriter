@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <link href='http://serve.fontsproject.com/css?family=Alef:400' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <app-topper [page]="page" (pageChange)="page=$event"></app-topper>
+    <div class="wrapper">
+      <div class="right-sidebar">
+      </div>
+      <div class="main-div">
+        <div class="thing-box">
+          <h1>{{ thing.title }}</h1>
+          <br>
+          <h5>{{ thing.description }}</h5>
+          <br>
+          <div class="writer-date">
+            <div class="writer">
+              <h3>מאת {{ thing.writer }}</h3>
+            </div>
+            <div class="date">
+              <h3>{{ thing.date }}</h3>
+            </div>  
+          </div>  
+          <br>
+          <br>
+          <h4>{{ thing.content }}</h4>
+        </div>
+        <div class="comments" *ngIf="comments.length > 0">
+          <div class="thing-title" *ngFor="let comment of comments; let i = index">
+            <div class="writer-date">
+              <div class="writer">
+                <h3>{{ comment.writer }}</h3>
+              </div>
+              <div class="date">
+                <h4>{{ comment.date }}, {{ comment.time }}</h4>
+              </div>
+            </div>
+            <br>
+            <h4>{{ comment.content }}</h4>
+            <hr class="solid" *ngIf="i != comments.length-1">
+          </div>
+        </div>
+        <textarea [(ngModel)]="commentInputCheck" #commentInput class="input" placeholder="כיתבו תגובה"
+        onfocus="this.placeholder = ''" onblur="this.placeholder = 'כיתבו תגובה'" (click)="hideErrorMessage()"></textarea>
+        <br>
+        <div class="new-comment">
+          <input type="text" [(ngModel)]="writerInputCheck" #usernameInput class="input" placeholder="שם"
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'שם'" (click)="hideErrorMessage()">
+          <button (click)="addComment(commentInput.value, usernameInput.value)">הגיבו</button>
+        </div>
+        <p id="error-message"></p>
+      </div>
+      <div class="left-sidebar">
+        <p></p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </body>  
+</html>

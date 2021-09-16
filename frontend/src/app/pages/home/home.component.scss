@@ -1,0 +1,31 @@
+// order: top, right, bottom, left
+
+// SIDEBARS AND THEIR ELEMENTS
+
+#new-thing-button {
+  max-width: 280px;
+  min-width: 280px;
+  padding: 15px 20px;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 28px;
+}
+
+input {
+  min-width: 204px;
+  max-width: 204px;
+}
+
+// MAIN-DIV AND ITS ELEMENTS
+
+.main-div {
+  text-align: center;
+}
+
+.thing-box {
+  cursor: pointer;
+}
+
+.thing-box:hover {
+  box-shadow: 0 0 11px  rgba(33,33,33,.2); 
+}

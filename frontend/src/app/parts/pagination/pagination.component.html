@@ -1,0 +1,13 @@
+<pagination-template #p="paginationApi" (pageChange)="page = $event">
+  <div class="custom-pagination">
+    <button class="previous" [class.disabled]="p.isFirstPage()"
+    *ngIf="!p.isFirstPage()" (click)="previous()">הקודם</button>
+    <div class="page-number" *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value">
+      <button class="not-current-page" (click)="onPageChange(page.value)" 
+      *ngIf="p.getCurrent() !== page.value">{{ page.label }}</button> 
+      <button class="current-page" *ngIf="p.getCurrent() === page.value">{{ page.label }}</button>            
+    </div>
+    <button class="next" [class.disabled]="p.isLastPage()" *ngIf="!p.isLastPage()" 
+    (click)="next()">הבא</button>
+  </div>
+</pagination-template>

@@ -1,0 +1,70 @@
+// order: top, right, bottom, left
+
+// SIDEBAR AND ITS ELEMENTS
+
+.thing-description {
+  max-height: 255px;
+  min-height: 255px;
+  text-align: justify;
+  padding: 0px;
+}
+
+#something-else-button {
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  font-size: 22px;
+  margin: 20px 0px 20px 0px;
+  min-width: 280px;
+  max-width: 280px;
+}
+
+input {
+  min-width: 258px;
+  max-width: 258px;
+  min-height: 30px;
+  max-height: 30px;
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+// CONTENT AND ITS ELEMENTS
+
+textarea {
+  min-width: 643px;
+  min-width: 643px;
+  min-height: 450px;
+  max-height: 45px;
+  padding: 10px;
+}
+
+.below-textarea {
+  display: flex;
+}
+
+.create-button {
+  float: left;
+}
+
+.create-button button {
+  margin-top: 20px;
+  font-size: 22px;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 50px;
+  max-height: 50px;
+}
+
+.error-messages {
+  font-size: 15px;
+  width: 80%;
+  text-align: justify;
+}
+
+.create-button {
+  font-size: 16px;
+  text-align: left;
+  left: 0;
+  font: lighter;
+  width: 20%;
+}

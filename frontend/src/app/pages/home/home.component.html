@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <link href='http://serve.fontsproject.com/css?family=Alef:400' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <app-topper [page]="page" (pageChange)="page=$event"></app-topper>
+    <div class="wrapper">
+      <div class="right-sidebar">
+        <button id="new-thing-button" routerLink="/new">כיתבו משהו בעצמכם!</button>
+        <br>
+        <div class="search-div">          
+          <input type="text" maxlength="20" #searchinput [(ngModel)]="searchInput" placeholder="חפשו משהו..." 
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'חפשו משהו...'" (click)="hideErrorMessage()">
+          <button type="button" id="search-button" (click)="search(searchinput.value)">
+          <img src="../../../assets/search16.png"></button>   
+        </div>
+        <p id="search-error-message"></p>
+      </div>
+      <div class="main-div">
+        <div class="thing-box" *ngFor="let thing of things | paginate: { maxSize: 10, itemsPerPage: 10, currentPage: page}" [routerLink]="['/thing', thing._id]">
+          <h1>{{ thing.title }}</h1>
+          <br>
+          <h5>{{ thing.description }}</h5>
+          <br>
+          <div class="writer-date">
+            <div class="writer">
+              <h3>מאת {{ thing.writer }}</h3>
+            </div>
+            <div class="date">
+              <h3>{{ thing.date }}</h3>
+            </div>
+          </div>  
+          <br>
+          <br>
+          <h4>{{ thing.content }}</h4>
+          <div class="home-page-comments" *ngIf="thing.comments.length != 0">
+            <br>
+            <hr class="solid">
+            <h4>{{ thing.comments.length }} תגובות</h4>
+          </div>
+        </div>
+        <br>
+        <br>
+        <app-pagination [page]="page" (pageChange)="page=$event"></app-pagination>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="left-sidebar">
+        <p></p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,248 @@
+// order: top, right, bottom, left
+
+// GENERAL
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+html {
+    background-color: rgb(234, 240, 247);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body {
+    overflow: auto;
+}
+
+.wrapper {
+    margin-top: 70px;
+    height: 100%;
+    display: flex;
+}
+
+h1, h2, h3, h4, h5, button, input, textarea, p {
+    font-family: 'Alef', serif;
+}
+
+h1, h2, h3, h4, h5 {    
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+button, input, .thing-box, .comments, textarea {
+    border-radius: 5px;
+    outline: none;
+    transition: box-shadow .1s;
+    border: 1px solid lightgray;
+}
+
+input, .thing-box, .comments, textarea {
+    box-shadow: 0 6px 6px -6px #777;
+}
+
+button {
+    left: 0;
+    color: white;
+    background-color: rgb(116, 152, 199);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
+::placeholder {
+    font: lighter;
+}
+
+textarea {
+    display: block;
+    resize: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+// TOPPER AND ITS ELEMENTS
+
+.topper {
+    top: 0;
+    position: fixed;
+    background-color: rgb(116, 152, 199);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    width: 100%;
+    color: white;
+}
+
+.topper-right {
+    width: 50%;
+    padding: 0px 20px 0px 20px;
+    text-align: right;
+}
+.topper-left {
+    font-size: 16px;
+    text-align: left;
+    padding: 0px 20px 0px 20px;
+    font: lighter;
+    width: 50%;
+}
+
+.logo, .about {
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.about {
+    font-size: 18px;
+}
+
+.about:hover, .logo:hover {
+    box-shadow: 0 0 0px rgba(33,33,33,.2); 
+}
+
+// SIDEBARS AND THEIR ELEMENTS
+
+.right-sidebar, .left-sidebar {
+    height: 100%;
+    min-width: 280px;
+    max-width: 280px;
+    padding: 0px 50px 0px 50px;
+    text-align: center;
+}
+
+.right-sidebar {
+    right: 0;
+}
+
+.left-sidebar {
+    left: 0;
+}
+
+button img {
+    vertical-align: middle;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    align-self: center;
+}
+
+input {
+  border: 1px solid lightgray;
+  min-width: 150px;
+  max-width: 150px;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  left: 0;
+}
+
+.search-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #search-button {
+    min-height: 44px;
+    max-height: 44px;
+    min-width: 44px;
+    max-width: 44px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#search-error-message, #error-message {
+    text-align: justify;
+    font-size: 15px;
+}
+
+// MAIN-DIV AND ITS ELEMENTS
+
+.main-div {
+    margin-left:auto;
+    margin-right:auto;
+    min-width: 665px;
+    max-width: 665px;
+}
+
+.thing-box, .comments {
+    background: white;
+    margin-bottom: 20px;
+    white-space: pre-wrap;
+    outline: none;
+    padding: 30px 50px 30px 50px;
+    transition: box-shadow .1s;
+    border: 1px solid lightgray;
+    text-align: justify;
+}
+
+#cancel-button {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.541);
+}
+
+.writer {
+    width: 50%;
+    text-align: right;
+}
+.date {
+    font-size: 16px;
+    text-align: left;
+    left: 0;
+    font: lighter;
+    width: 50%;
+}
+
+.writer-date {
+    display: flex;
+}
+
+.custom-pagination .page-number{
+    display: inline-block;
+}
+  
+.previous, .not-current-page, .next {
+    background: white;
+    color: black;
+    font: lighter;
+    margin: 4px;
+    padding: 5px 15px;
+    font-size: 17px;
+    box-shadow: 0 6px 6px -6px #777;
+}
+  
+.current-page {
+    background-color: rgb(116, 152, 199);
+    color: white;
+    font: lighter;
+    margin: 4px;
+    padding: 5px 15px;
+    font-size: 17px;
+    cursor: text !important;
+}
+  
+.current-page:hover {
+    box-shadow: 0 0 0px rgba(33,33,33,.2) !important; 
+}

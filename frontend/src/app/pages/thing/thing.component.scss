@@ -1,0 +1,40 @@
+// order: top, right, bottom, left
+
+// MAIN-DIV AND ITS ELEMENTS
+
+textarea {
+  min-width: 643px;
+  max-width: 643px;
+  min-height: 208px;
+  max-height: 208px;
+}  
+
+.new-comment {
+  left: 0;
+  display: flex;
+}
+
+.new-comment input {
+  margin-left: 283px;
+  min-width: 220px;
+  max-width: 220px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.new-comment button {
+  margin-left: 0px;
+  margin-right: 20px;
+  left: 0;
+  font-size: 20px;
+  min-width: 120px;
+  max-width: 120px;    
+}
+
+.thing-box {
+  cursor: text;
+}
+
+.thing-box:hover {
+  box-shadow: 0 6px 6px -6px #777;
+}

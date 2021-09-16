@@ -1,0 +1,31 @@
+// order: top, right, bottom, left
+
+p, h4 {    
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+p.quote {
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 0px 20px 0px 20px;
+}
+
+p.headline {
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+}
+
+p.copy {
+  font-size: 14px;
+}
+
+.thing-box {
+  cursor: text;
+}
+  
+.thing-box:hover {
+  box-shadow: 0 6px 6px -6px #777;
+}

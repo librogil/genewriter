@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="rtl">
+  <head>
+    <link href='http://serve.fontsproject.com/css?family=Alef:400' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <app-topper [page]="page" (pageChange)="page=$event"></app-topper>
+    <div class="wrapper">
+      <div class="right-sidebar">
+        <h4>תוצאות החיפוש עבור:</h4>
+        <h3>{{searchTerm}}</h3>
+        <br>
+        <hr class="solid">
+        <br>
+        <button class="search-button" (click)="searchFilter('all')">חפשו בהכל</button>
+        <br>
+        <button class="search-button" (click)="searchFilter('title')">חפשו רק לפי כותרת</button>
+        <br>
+        <button class="search-button" (click)="searchFilter('description')">חפשו רק לפי נושא</button>
+        <br>
+        <button class="search-button" (click)="searchFilter('writer')">חפשו רק לפי שם</button>
+        <br>
+        <button class="search-button" (click)="searchFilter('content')">חפשו רק בתוך היצירה</button>    
+        <br>
+        <br>
+        <hr class="solid">
+        <br>
+        <div class="search-div">
+          <input type="text" maxlength="20" #searchinput [(ngModel)]="searchInput" placeholder="חפשו משהו אחר..." 
+          onfocus="this.placeholder = ''" onblur="this.placeholder = 'חפשו משהו אחר...'" (click)="hideErrorMessage()">
+          <button id="search-button" (click)="search(searchinput.value)"><img src="../../../assets/search16.png"></button>   
+        </div>
+        <p id="search-error-message"></p>
+      </div>
+      <div class="main-div">
+        <div class="thing-box" *ngFor="let thing of searchResults | paginate: { maxSize: 3, itemsPerPage: 3, currentPage: page}" [routerLink]="['/thing', thing._id]">
+          <h1>{{ thing.title }}</h1>
+          <br>
+          <h5>{{ thing.description }}</h5>
+          <br>
+          <div class="writer-date">
+            <div class="writer">
+              <h3>מאת {{ thing.writer }}</h3>
+            </div>
+            <div class="date">
+              <h3>{{ thing.date }}</h3>
+            </div>  
+          </div>  
+          <br>
+          <br>
+          <h4>{{ thing.content }}</h4>
+        </div>
+        <br>
+        <br>
+        <br>
+        <app-pagination [page]="page" (pageChange)="page=$event"></app-pagination>
+        <br>
+      </div>
+      <div class="left-sidebar">
+      </div>
+    </div>
+  </body>
+</html>
